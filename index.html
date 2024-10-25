@@ -13,7 +13,7 @@
     <style>
         :root {
             --modal-bg: rgba(0, 0, 0, 0.9);
-            --button-success: #4CAF50;
+            --button-success: #000000;
             --button-danger: #f44336;
             --scanner-border: #4CAF50;
         }
