@@ -1,1 +1,0 @@
-# qrvision.github.io
