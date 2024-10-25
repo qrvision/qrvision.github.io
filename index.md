@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A fast and simple web-based QR and barcode scanner that works on all devices. Scan your codes with ease, no installation required.">
+    <meta name="google-site-verification" content="J4i7U8BoUdSe9vM605fuLa4323DhqnTh3aqJXRbPNLE" />
     <title>QR Scanner</title>
     
     <!-- Preconnect to CDN -->
