@@ -27,6 +27,43 @@
             font-family: system-ui, -apple-system, sans-serif;
             line-height: 1.5;
             min-height: 100vh;
+            padding-top: 60px; /* Space for fixed header */
+        }
+
+        /* Header and Info Button */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-modal);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-btn {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .info-btn:hover {
+            color: var(--primary);
+        }
+
+        .info-btn svg {
+            width: 1.5rem;
+            height: 1.5rem;
         }
 
         /* Layout */
@@ -59,27 +96,6 @@
             position: absolute;
             left: 0;
             top: 0;
-        }
-
-        /* Info Button */
-        .info-btn {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            background: var(--bg-modal);
-            border: none;
-            border-radius: 50%;
-            width: 2.5rem;
-            height: 2.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-        }
-
-        .info-btn:hover {
-            background: var(--primary);
         }
 
         /* Upload Button */
@@ -121,6 +137,7 @@
             justify-content: center;
             padding: 1rem;
             backdrop-filter: blur(4px);
+            z-index: 1001;
         }
 
         .modal.active {
@@ -187,6 +204,20 @@
             background: var(--primary-dark);
         }
 
+        /* Status Messages */
+        .status-message {
+            text-align: center;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: var(--bg-modal);
+            border-radius: 6px;
+            display: none;
+        }
+
+        .status-message.active {
+            display: block;
+        }
+
         /* Responsive Design */
         @media (max-width: 480px) {
             .container {
@@ -196,20 +227,37 @@
             .modal-content {
                 margin: 0.5rem;
             }
+            
+            #interactive.viewport {
+                height: 250px;
+            }
+            
+            #interactive.viewport > canvas, 
+            #interactive.viewport > video {
+                height: 250px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Info Button -->
-    <button class="info-btn" id="infoBtn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-        </svg>
-    </button>
+    <!-- Header with Info Button -->
+    <header class="header">
+        <button class="info-btn" id="infoBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Info
+        </button>
+        <h1 style="font-size: 1.2rem;">Barcode Scanner</h1>
+        <div style="width: 48px;"></div> <!-- Spacer for alignment -->
+    </header>
 
     <div class="container">
+        <!-- Status Message -->
+        <div id="statusMessage" class="status-message"></div>
+
         <!-- Scanner Container -->
         <div id="interactive" class="viewport"></div>
 
@@ -254,18 +302,43 @@
     </div>
 
     <script>
+        const statusMessage = document.getElementById('statusMessage');
+
+        function showStatus(message, isError = false) {
+            statusMessage.textContent = message;
+            statusMessage.style.backgroundColor = isError ? '#dc2626' : var(--bg-modal);
+            statusMessage.classList.add('active');
+            setTimeout(() => statusMessage.classList.remove('active'), 3000);
+        }
+
         // Initialize QuaggaJS when the page loads
         document.addEventListener('DOMContentLoaded', function() {
-            // Request camera permission
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(function(stream) {
-                    initQuagga();
-                })
-                .catch(function(err) {
-                    console.error("Camera access denied:", err);
-                    alert("Please allow camera access to use the scanner");
-                });
+            initCamera();
         });
+
+        function initCamera() {
+            // First, check if the device has a camera
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                showStatus('Camera access is not supported by your browser', true);
+                return;
+            }
+
+            // Request camera access with specific constraints for mobile
+            navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: 'environment', // Prefer rear camera
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
+                }
+            })
+            .then(function(stream) {
+                initQuagga();
+            })
+            .catch(function(err) {
+                console.error("Camera access error:", err);
+                showStatus('Please allow camera access to use the scanner', true);
+            });
+        }
 
         function initQuagga() {
             Quagga.init({
@@ -278,14 +351,22 @@
                     },
                 },
                 decoder: {
-                    readers: ["ean_reader", "ean_8_reader", "code_128_reader", "code_39_reader", "upc_reader"]
+                    readers: [
+                        "ean_reader",
+                        "ean_8_reader",
+                        "code_128_reader",
+                        "code_39_reader",
+                        "upc_reader"
+                    ]
                 }
             }, function(err) {
                 if (err) {
                     console.error(err);
+                    showStatus('Failed to initialize scanner', true);
                     return;
                 }
                 Quagga.start();
+                showStatus('Scanner initialized successfully');
             });
 
             Quagga.onDetected(function(result) {
