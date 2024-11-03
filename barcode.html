@@ -354,12 +354,12 @@
                         
                       },
                       area: { // defines rectangle of the detection/localization area
-                        top: "0%",    // top offset
+                        top: "10%%",    // top offset
                         right: "0%",  // right offset
-                        left: "0%",   // left offset
+                        left: "10%%",   // left offset
                         bottom: "0%"  // bottom offset
                       },
-                      singleChannel: false 
+                      singleChannel: true 
                 },
                 decoder: {
                     readers: [
@@ -384,7 +384,7 @@
             Quagga.onDetected(function(result) {
                 if (result.codeResult.code) {
                     showResult(result.codeResult.code);
-                    // Quagga.pause();
+                    Quagga.pause();
                 }
             });
         }
@@ -424,7 +424,7 @@
 
         function closeModal() {
             document.getElementById('resultModal').classList.remove('active');
-            Quagga.resume();
+            Quagga.start();
         }
 
         // Info modal handling
