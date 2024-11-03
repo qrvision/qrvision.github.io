@@ -306,7 +306,7 @@
 
         function showStatus(message, isError = false) {
             statusMessage.textContent = message;
-            statusMessage.style.backgroundColor = isError ? '#dc2626' : var(--bg-modal);
+            statusMessage.style.backgroundColor = isError ? '#dc2626' : '#1f2937';
             statusMessage.classList.add('active');
             setTimeout(() => statusMessage.classList.remove('active'), 3000);
         }
