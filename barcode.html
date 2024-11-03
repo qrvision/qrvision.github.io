@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barcode Scanner</title>
+    <!-- Add proper Tailwind CSS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure dark mode and other Tailwind settings -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            100: '#1a1a1a',
+                            200: '#2d2d2d',
+                            300: '#404040',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Add custom styles for QuaggaJS viewport -->
+    <style>
+        #interactive.viewport {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        #interactive.viewport > canvas, #interactive.viewport > video {
+            max-width: 100%;
+            width: 100%;
+            height: 300px;
+        }
+        canvas.drawing, canvas.drawingBuffer {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen">
     <!-- Info Button -->
-    <button id="infoBtn" class="fixed top-4 left-4 p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
+    <button id="infoBtn" class="fixed top-4 left-4 p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-200">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
@@ -18,13 +54,13 @@
     <div class="container mx-auto px-4 py-8">
         <div class="max-w-2xl mx-auto">
             <!-- Camera View -->
-            <div id="interactive" class="viewport bg-gray-800 rounded-lg overflow-hidden mb-4">
+            <div id="interactive" class="viewport bg-gray-800 rounded-lg overflow-hidden mb-4 shadow-lg">
                 <video class="w-full"></video>
             </div>
 
             <!-- Upload Button -->
             <div class="flex justify-center mb-4">
-                <label class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg cursor-pointer transition-colors">
+                <label class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg cursor-pointer transition-colors duration-200 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0l-4 4m4-4v12" />
                     </svg>
@@ -36,30 +72,30 @@
     </div>
 
     <!-- Result Modal -->
-    <div id="resultModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-gray-800 p-6 rounded-lg max-w-md w-full mx-4">
+    <div id="resultModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-gray-800 p-6 rounded-lg max-w-md w-full mx-4 shadow-xl">
             <h3 class="text-xl font-semibold mb-4">Scan Result</h3>
-            <p id="barcodeResult" class="mb-4"></p>
-            <button onclick="closeModal()" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors">
+            <p id="barcodeResult" class="mb-4 p-4 bg-gray-700 rounded-lg"></p>
+            <button onclick="closeModal()" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors duration-200">
                 Close
             </button>
         </div>
     </div>
 
     <!-- Info Modal -->
-    <div id="infoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-gray-800 p-6 rounded-lg max-w-md w-full mx-4">
+    <div id="infoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-gray-800 p-6 rounded-lg max-w-md w-full mx-4 shadow-xl">
             <h3 class="text-xl font-semibold mb-4">About</h3>
             <div class="mb-4">
-                <h4 class="font-semibold mb-2">Contact Details</h4>
-                <p>Email: contact@example.com</p>
+                <h4 class="font-semibold mb-2 text-blue-400">Contact Details</h4>
+                <p class="mb-1">Email: contact@example.com</p>
                 <p>Phone: (555) 123-4567</p>
             </div>
             <div class="mb-4">
-                <h4 class="font-semibold mb-2">About Us</h4>
-                <p>A simple and efficient barcode scanner web application. Scan barcodes using your camera or upload barcode images.</p>
+                <h4 class="font-semibold mb-2 text-blue-400">About Us</h4>
+                <p class="text-gray-300">A simple and efficient barcode scanner web application. Scan barcodes using your camera or upload barcode images.</p>
             </div>
-            <button onclick="closeInfoModal()" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors">
+            <button onclick="closeInfoModal()" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors duration-200">
                 Close
             </button>
         </div>
@@ -75,6 +111,7 @@
                 })
                 .catch(function(err) {
                     console.error("Camera access denied:", err);
+                    alert("Please allow camera access to use the scanner");
                 });
         });
 
