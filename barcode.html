@@ -303,6 +303,7 @@
 
     <script>
         const statusMessage = document.getElementById('statusMessage');
+        let cameraON=false;
 
         function showStatus(message, isError = false) {
             statusMessage.textContent = message;
@@ -346,9 +347,19 @@
                     name: "Live",
                     type: "LiveStream",
                     target: document.querySelector("#interactive"),
-                    constraints: {
-                        facingMode: "environment"
-                    },
+                     constraints: {
+                        width: 640,
+                        height: 480,
+                        facingMode: "environment",
+                        
+                      },
+                      area: { // defines rectangle of the detection/localization area
+                        top: "0%",    // top offset
+                        right: "0%",  // right offset
+                        left: "0%",   // left offset
+                        bottom: "0%"  // bottom offset
+                      },
+                      singleChannel: false 
                 },
                 decoder: {
                     readers: [
@@ -366,16 +377,20 @@
                     return;
                 }
                 Quagga.start();
+                cameraON=true;
                 showStatus('Scanner initialized successfully');
             });
 
             Quagga.onDetected(function(result) {
                 if (result.codeResult.code) {
                     showResult(result.codeResult.code);
-                    Quagga.pause();
+                    // Quagga.pause();
                 }
             });
         }
+
+       
+            
 
         // File upload handling
         document.getElementById('fileInput').addEventListener('change', function(e) {
