@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:qrvision.github.io:tools:qr-vision",
+      "displayName": "QR Vision - Online QR, Barcode & Generator Suite",
+      "type": "application/agent-skills+md",
+      "url": "https://qrvision.github.io/llms.txt",
+      "representativeQueries": [
+        "Scan a QR code online using webcam or uploaded image",
+        "Scan QR codes inside a PDF document online",
+        "Read EAN-13, UPC, or Code 128 barcodes in browser",
+        "Generate a free static PNG or SVG QR code for URL or Wi-Fi"
+      ]
+    }
+  ]
+}

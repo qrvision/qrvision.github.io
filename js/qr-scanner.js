@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const zoomSlider = document.getElementById('zoom-slider');
   const continuousToggle = document.getElementById('continuous-toggle');
   const beepToggle = document.getElementById('beep-toggle');
+  const uploadBtn = document.getElementById('upload-button');
   const fileInput = document.getElementById('file-input');
   const dropZone = document.getElementById('drop-zone');
   const readerContainer = document.getElementById('reader-container');
@@ -244,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   startBtn.addEventListener('click', startScanning);
+  if (uploadBtn) uploadBtn.addEventListener('click', () => fileInput.click());
   if (stopBtn) stopBtn.addEventListener('click', stopScanning);
 
   if (cameraSelect) {

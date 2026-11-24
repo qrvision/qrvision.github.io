@@ -1,0 +1,24 @@
+# QR Vision
+
+> Free, privacy-first, 100% client-side online QR code scanner, 1D barcode scanner, and static QR code generator that runs directly in any modern browser with zero server uploads.
+
+QR Vision processes all camera streams, uploaded images, and PDF documents locally inside the user's browser using JavaScript. No images, camera feeds, or decoded data ever leave the device.
+
+## Core Tools
+
+- [Online QR Code Scanner](https://qrvision.github.io/): Scan QR codes via live camera, batch images (up to 20), PDFs, drag-and-drop, or clipboard paste (`Ctrl+V`) with built-in anti-phishing URL safety checks.
+- [Online Barcode Scanner](https://qrvision.github.io/barcode.html): Decode EAN-13, EAN-8, UPC-A, Code 128, and Code 39 barcodes locally in your browser.
+- [Free QR Code Generator](https://qrvision.github.io/generator.html): Create permanent, non-expiring static QR codes (PNG and vector SVG) for URLs, plain text, Wi-Fi, vCards, UPI payments, emails, and phones.
+
+## Languages
+
+- [English](https://qrvision.github.io/): Main English QR scanner
+- [Português (Brasil)](https://qrvision.github.io/pt/): Leitor de QR Code Online
+- [Français](https://qrvision.github.io/fr/): Lecteur QR Code en Ligne
+- [Español](https://qrvision.github.io/es/): Escáner de Códigos QR Online
+- [हिन्दी](https://qrvision.github.io/hi/): ऑनलाइन QR कोड स्कैनर
+
+## Documentation & Policies
+
+- [About QR Vision](https://qrvision.github.io/about.html): Privacy-first architecture and tool overview
+- [Privacy Policy](https://qrvision.github.io/privacy.html): Zero server storage and local-only scan history policy
