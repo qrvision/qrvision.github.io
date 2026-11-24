@@ -1,470 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMWK7FXYVR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NMWK7FXYVR');
+  </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMWK7FXYVR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-NMWK7FXYVR');
-    </script>
-    <meta name="description" content="A fast and simple web-based barcode scanner that works on all devices. Scan your barcodes with ease, no installation required.">
-    <meta name="google-site-verification" content="J4i7U8BoUdSe9vM605fuLa4323DhqnTh3aqJXRbPNLE" />
-    <meta name="msvalidate.01" content="6B207FDEE38E8B1F2AC60875FBCDE2F5" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barcode Scanner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
-    <link rel="manifest" href="image/site.webmanifest">
+  <title>Free Online Barcode Scanner - Read EAN, UPC, Code 128 | QR Vision</title>
+  <meta name="description" content="Scan product barcodes online using your camera or uploaded images. Supports EAN-13, EAN-8, UPC-A, Code 128, and Code 39 barcodes with 100% browser privacy.">
+  <meta name="keywords" content="online barcode scanner, barcode reader online, scan barcode from image, EAN-13 scanner, UPC barcode reader, Code 128 scanner">
+  <link rel="canonical" href="https://qrvision.github.io/barcode.html">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
-    <style>
-        /* Reset and Base Styles */
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --bg-dark: #111827;
-            --bg-modal: #1f2937;
-            --text: #f3f4f6;
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qrvision.github.io/barcode.html">
+  <meta property="og:title" content="Free Online Barcode Scanner | QR Vision">
+  <meta property="og:description" content="Scan EAN, UPC, Code 128, and Code 39 barcodes directly in your browser. Fast, private, no installation required.">
+  <meta property="og:image" content="https://qrvision.github.io/image/og-preview.png">
+  <meta property="og:site_name" content="QR Vision">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Online Barcode Scanner | QR Vision">
+  <meta name="twitter:description" content="Scan product barcodes from webcam or image upload — 100% free and private.">
+  <meta name="twitter:image" content="https://qrvision.github.io/image/og-preview.png">
+
+  <!-- Verification & PWA -->
+  <meta name="google-site-verification" content="J4i7U8BoUdSe9vM605fuLa4323DhqnTh3aqJXRbPNLE">
+  <meta name="msvalidate.01" content="6B207FDEE38E8B1F2AC60875FBCDE2F5">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png">
+  <link rel="manifest" href="/image/site.webmanifest">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "QR Vision Online Barcode Scanner",
+    "url": "https://qrvision.github.io/barcode.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "description": "Free browser-based 1D barcode scanner supporting EAN-13, EAN-8, UPC-A, Code 128, and Code 39 via live camera or image upload.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "EAN-13, EAN-8, UPC-A retail barcode decoding",
+      "Code 128 and Code 39 logistics barcode decoding",
+      "Live webcam scanning and image file upload",
+      "Local scan history with zero server uploads"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://qrvision.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Barcode Scanner",
+        "item": "https://qrvision.github.io/barcode.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which barcode formats can QR Vision decode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "QR Vision's Barcode Scanner supports EAN-13, EAN-8, UPC-A, Code 128, and Code 39 barcodes from both live camera feeds and uploaded images."
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      },
+      {
+        "@type": "Question",
+        "name": "Can I scan a barcode from an image or photo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Click Upload Barcode Image, drag and drop an image file, or paste a screenshot with Ctrl+V to decode the barcode value locally in your browser."
         }
-
-        body {
-            background: var(--bg-dark);
-            color: var(--text);
-            font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.5;
-            min-height: 100vh;
-            padding-top: 60px; /* Space for fixed header */
+      },
+      {
+        "@type": "Question",
+        "name": "Are my scanned barcodes uploaded to any server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All decoding is executed locally inside your browser using client-side JavaScript. No image or barcode number ever leaves your device."
         }
-
-        /* Header and Info Button */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-modal);
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .info-btn {
-            background: transparent;
-            border: none;
-            color: var(--text);
-            cursor: pointer;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .info-btn:hover {
-            color: var(--primary);
-        }
-
-        .info-btn svg {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-
-        /* Layout */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        /* Scanner Viewport */
-        #interactive.viewport {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            background: var(--bg-modal);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-        }
-
-        #interactive.viewport > canvas, 
-        #interactive.viewport > video {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        canvas.drawing, 
-        canvas.drawingBuffer {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        /* Upload Button */
-        .upload-container {
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        .upload-btn {
-            background: var(--primary);
-            color: var(--text);
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-            transition: background-color 0.2s;
-        }
-
-        .upload-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        .upload-btn svg {
-            width: 1.25rem;
-            height: 1.25rem;
-        }
-
-        /* Modals */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            backdrop-filter: blur(4px);
-            z-index: 1001;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--bg-modal);
-            padding: 1.5rem;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 400px;
-            animation: modalSlide 0.3s ease;
-        }
-
-        @keyframes modalSlide {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .modal-section {
-            margin-bottom: 1rem;
-        }
-
-        .modal-section h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .result-text {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-            word-break: break-all;
-        }
-
-        .modal-btn {
-            width: 100%;
-            background: var(--primary);
-            color: var(--text);
-            border: none;
-            padding: 0.75rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.2s;
-        }
-
-        .modal-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Status Messages */
-        .status-message {
-            text-align: center;
-            padding: 1rem;
-            margin: 1rem 0;
-            background: var(--bg-modal);
-            border-radius: 6px;
-            display: none;
-        }
-
-        .status-message.active {
-            display: block;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0.5rem;
-            }
-
-            .modal-content {
-                margin: 0.5rem;
-            }
-            
-            #interactive.viewport {
-                height: 250px;
-            }
-            
-            #interactive.viewport > canvas, 
-            #interactive.viewport > video {
-                height: 250px;
-            }
-        }
-    </style>
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <!-- Header with Info Button -->
-    <header class="header">
-        <button class="info-btn" id="infoBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="16" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            Info
-        </button>
-        <h1 style="font-size: 1.2rem;">Barcode Scanner</h1>
-        <div style="width: 48px;"></div> <!-- Spacer for alignment -->
-    </header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">
+        <img src="/image/favicon-32x32.png" alt="QR Vision logo" class="brand-icon" width="28" height="28">
+        <span>QR Vision</span>
+      </a>
 
-    <div class="container">
-        <!-- Status Message -->
-        <div id="statusMessage" class="status-message"></div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">QR Scanner</a>
+        <a href="/barcode.html" class="nav-link" aria-current="page">Barcode Scanner</a>
+        <a href="/generator.html" class="nav-link">QR Generator</a>
+      </nav>
 
-        <!-- Scanner Container -->
-        <div id="interactive" class="viewport"></div>
-
-        <!-- Upload Button -->
-        <div class="upload-container">
-            <label class="upload-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="17 8 12 3 7 8"></polyline>
-                    <line x1="12" y1="3" x2="12" y2="15"></line>
-                </svg>
-                Upload Barcode Image
-                <input type="file" accept="image/*" id="fileInput" hidden>
-            </label>
-        </div>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" popovertarget="lang-popover" aria-label="Select language">🌐 EN ▾</button>
+        <button type="button" class="icon-btn" popovertarget="info-popover" aria-label="About and contact info">ℹ️ Info</button>
+      </div>
     </div>
+  </header>
 
-    <!-- Result Modal -->
-    <div id="resultModal" class="modal">
-        <div class="modal-content">
-            <h3 class="modal-title">Scan Result</h3>
-            <div id="barcodeResult" class="result-text"></div>
-            <button class="modal-btn" onclick="closeModal()">Close</button>
+  <div id="lang-popover" popover>
+    <strong>Select Language</strong>
+    <nav class="lang-list" aria-label="Language navigation">
+      <a href="/" hreflang="en">🇺🇸 English (EN)</a>
+      <a href="/pt/" hreflang="pt-BR">🇧🇷 Português (PT)</a>
+      <a href="/fr/" hreflang="fr">🇫🇷 Français (FR)</a>
+      <a href="/es/" hreflang="es">🇪🇸 Español (ES)</a>
+      <a href="/hi/" hreflang="hi">🇮🇳 हिन्दी (HI)</a>
+    </nav>
+  </div>
+
+  <div id="info-popover" popover>
+    <strong>QR Vision Barcode Scanner</strong>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">
+      Client-side 1D barcode decoder supporting EAN, UPC, Code 128, and Code 39.
+    </p>
+    <p style="font-size: 0.88rem; margin-bottom: 0.5rem;">
+      Contact: <a href="mailto:hashtagfor@outlook.com">hashtagfor@outlook.com</a>
+    </p>
+    <p style="font-size: 0.88rem;">
+      <a href="/about.html">About</a> · <a href="/privacy.html">Privacy Policy</a>
+    </p>
+  </div>
+
+  <main>
+    <section class="tool-card" aria-label="Barcode Scanner">
+      <h1>Free Online Barcode Scanner</h1>
+      <p class="lead-text">
+        Read EAN-13, EAN-8, UPC, Code 128, and Code 39 barcodes directly in your browser from a live camera or uploaded image.
+      </p>
+
+      <div class="scanner-actions">
+        <button id="start-camera-btn" type="button" class="btn btn-primary">📷 Start Camera Scan</button>
+        <button id="stop-camera-btn" type="button" class="btn btn-danger" hidden>Stop Camera</button>
+        <label for="fileInput" class="btn btn-secondary" tabindex="0" role="button">
+          🖼️ Upload Barcode Image
+          <input type="file" accept="image/*" id="fileInput" hidden>
+        </label>
+      </div>
+
+      <div id="drop-zone" class="drop-zone">
+        Drag &amp; drop a barcode photo here, or press <strong>Ctrl+V</strong> (Cmd+V) to paste a screenshot.
+      </div>
+
+      <div id="statusMessage" class="status-banner" role="status" aria-live="polite"></div>
+
+      <div id="interactive" class="viewport" role="region" aria-label="Barcode camera viewfinder"></div>
+
+      <div id="history-section" class="history-section" hidden>
+        <div class="history-header">
+          <h2>Recent Scans (Stored Locally)</h2>
+          <button id="clear-history-btn" type="button" class="btn btn-secondary btn-sm">Clear History</button>
         </div>
+        <ul id="history-list" class="history-list"></ul>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Supported Barcode Formats</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>EAN-13 &amp; EAN-8</h3>
+          <p>International retail product barcodes used globally on consumer goods and books (ISBN).</p>
+        </article>
+        <article class="feature-card">
+          <h3>UPC-A</h3>
+          <p>Universal Product Code standard widely used across North American retail inventory.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Code 128 &amp; Code 39</h3>
+          <p>High-density alphanumeric barcodes used in shipping labels, warehousing, and logistics.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Which barcode formats can QR Vision decode?</summary>
+          <p>QR Vision supports EAN-13, EAN-8, UPC-A, Code 128, and Code 39 barcodes from both webcam streams and uploaded image files.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I scan a barcode from an image or photo?</summary>
+          <p>Yes. Click <strong>Upload Barcode Image</strong>, drag and drop a photo, or paste a screenshot with <code>Ctrl+V</code> to decode the barcode instantly.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are my scanned barcodes uploaded to any server?</summary>
+          <p>No. All image analysis happens locally on your device using client-side JavaScript.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="resultModal" aria-labelledby="barcode-dialog-title">
+    <h3 id="barcode-dialog-title">Barcode Scan Result</h3>
+    <div id="barcodeResult" class="result-box"></div>
+    <div class="dialog-actions">
+      <span id="smart-action-slot"></span>
+      <button type="button" id="copy-barcode-btn" class="btn btn-primary">Copy</button>
+      <form method="dialog">
+        <button type="submit" class="btn btn-secondary">Close</button>
+      </form>
     </div>
+  </dialog>
 
-    <!-- Info Modal -->
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <h3 class="modal-title">About</h3>
-            <div class="modal-section">
-                <h4>Contact Details</h4>
-                <p>Email: contact@example.com</p>
-                <p>Phone: (555) 123-4567</p>
-            </div>
-            <div class="modal-section">
-                <h4>About Us</h4>
-                <p>A simple and efficient barcode scanner web application. Scan barcodes using your camera or upload barcode images.</p>
-            </div>
-            <button class="modal-btn" onclick="closeInfoModal()">Close</button>
-        </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2024–2026 QR Vision. Free browser-based QR &amp; Barcode tools.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">QR Scanner</a>
+        <a href="/barcode.html">Barcode Scanner</a>
+        <a href="/generator.html">QR Generator</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </nav>
     </div>
+  </footer>
 
-    <script>
-        const statusMessage = document.getElementById('statusMessage');
-        let cameraON=false;
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js" integrity="sha512-bCsBoYoW6zE0aja5xcIyoCDPfT27+cGr7AOCqelttLVRGay6EKGQbR6wm6SUcUGOMGXJpj+jrIpMS6i80+kZPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const READERS = ['ean_reader', 'ean_8_reader', 'code_128_reader', 'code_39_reader', 'upc_reader'];
+      let cameraActive = false;
+      let lastCode = '';
 
-        function showStatus(message, isError = false) {
-            statusMessage.textContent = message;
-            statusMessage.style.backgroundColor = isError ? '#dc2626' : '#1f2937';
-            statusMessage.classList.add('active');
-            setTimeout(() => statusMessage.classList.remove('active'), 3000);
+      const startBtn = document.getElementById('start-camera-btn');
+      const stopBtn = document.getElementById('stop-camera-btn');
+      const fileInput = document.getElementById('fileInput');
+      const dropZone = document.getElementById('drop-zone');
+      const viewport = document.getElementById('interactive');
+      const statusMessage = document.getElementById('statusMessage');
+      const resultModal = document.getElementById('resultModal');
+      const barcodeResult = document.getElementById('barcodeResult');
+      const actionSlot = document.getElementById('smart-action-slot');
+      const copyBtn = document.getElementById('copy-barcode-btn');
+      const historySection = document.getElementById('history-section');
+      const historyList = document.getElementById('history-list');
+      const clearHistoryBtn = document.getElementById('clear-history-btn');
+
+      function showStatus(message, isError = false) {
+        statusMessage.textContent = message;
+        statusMessage.classList.toggle('error', isError);
+        statusMessage.classList.add('active');
+      }
+
+      function clearStatus() {
+        statusMessage.classList.remove('active', 'error');
+      }
+
+      function refreshHistory() {
+        window.QRVision.renderHistory(historyList, historySection, (text) => {
+          lastCode = text;
+          window.QRVision.openResultDialog(resultModal, barcodeResult, actionSlot, text);
+        });
+      }
+
+      function showCode(code) {
+        lastCode = code;
+        window.QRVision.saveToHistory(code);
+        refreshHistory();
+        window.QRVision.openResultDialog(resultModal, barcodeResult, actionSlot, code);
+      }
+
+      function stopCamera() {
+        if (!cameraActive || typeof Quagga === 'undefined') return;
+        try {
+          Quagga.stop();
+        } catch {
+          // Ignore
         }
+        cameraActive = false;
+        viewport.classList.remove('active');
+        startBtn.hidden = false;
+        stopBtn.hidden = true;
+      }
 
-        // Initialize QuaggaJS when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initCamera();
+      function startCamera() {
+        if (typeof Quagga === 'undefined') {
+          showStatus('Barcode library is still loading. Please try again.', true);
+          return;
+        }
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          showStatus('Camera access is not supported by your browser.', true);
+          return;
+        }
+        clearStatus();
+        viewport.classList.add('active');
+        startBtn.hidden = true;
+        stopBtn.hidden = false;
+
+        Quagga.init({
+          inputStream: {
+            name: 'Live',
+            type: 'LiveStream',
+            target: viewport,
+            constraints: { facingMode: 'environment' }
+          },
+          decoder: { readers: READERS }
+        }, (err) => {
+          if (err) {
+            viewport.classList.remove('active');
+            startBtn.hidden = false;
+            stopBtn.hidden = true;
+            showStatus('Unable to access camera. Check browser permissions.', true);
+            return;
+          }
+          Quagga.start();
+          cameraActive = true;
         });
 
-        function initCamera() {
-            // First, check if the device has a camera
-            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-                showStatus('Camera access is not supported by your browser', true);
-                return;
-            }
-
-            // Request camera access with specific constraints for mobile
-            navigator.mediaDevices.getUserMedia({
-                video: {
-                    facingMode: 'environment', // Prefer rear camera
-                    width: { ideal: 1280 },
-                    height: { ideal: 720 }
-                }
-            })
-            .then(function(stream) {
-                initQuagga();
-            })
-            .catch(function(err) {
-                console.error("Camera access error:", err);
-                showStatus('Please allow camera access to use the scanner', true);
-            });
-        }
-
-        function initQuagga() {
-            Quagga.init({
-                inputStream: {
-                    name: "Live",
-                    type: "LiveStream",
-                    target: document.querySelector("#interactive"),
-                     constraints: {
-                        facingMode: "environment",
-                        
-                      },
-                     
-                },
-                decoder: {
-                    readers: [
-                        "ean_reader",
-                        "ean_8_reader",
-                        "code_128_reader",
-                        "code_39_reader",
-                        "upc_reader"
-                    ]
-                }
-            }, function(err) {
-                if (err) {
-                    console.error(err);
-                    showStatus('Failed to initialize scanner', true);
-                    return;
-                }
-                Quagga.start();
-                cameraON=true;
-                showStatus('Scanner initialized successfully');
-            });
-
-            Quagga.onDetected(function(result) {
-                if (result.codeResult.code) {
-                    showResult(result.codeResult.code);
-                    Quagga.pause();
-                }
-            });
-        }
-
-       
-            
-
-        // File upload handling
-        document.getElementById('fileInput').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    Quagga.decodeSingle({
-                        decoder: {
-                            readers: ["ean_reader", "ean_8_reader", "code_128_reader", "code_39_reader", "upc_reader"]
-                        },
-                        locate: true,
-                        src: e.target.result
-                    }, function(result) {
-                        if (result && result.codeResult) {
-                            showResult(result.codeResult.code);
-                        } else {
-                            showResult("No barcode detected");
-                        }
-                    });
-                };
-                reader.readAsDataURL(file);
-            }
+        Quagga.offDetected();
+        Quagga.onDetected((result) => {
+          const code = result?.codeResult?.code;
+          if (code && code !== lastCode) {
+            showCode(code);
+            Quagga.pause();
+          }
         });
+      }
 
-        // Modal handling
-        function showResult(code) {
-            document.getElementById('barcodeResult').textContent = code;
-            document.getElementById('resultModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('resultModal').classList.remove('active');
-            Quagga.start();
-        }
-
-        // Info modal handling
-        document.getElementById('infoBtn').addEventListener('click', function() {
-            document.getElementById('infoModal').classList.add('active');
-        });
-
-        function closeInfoModal() {
-            document.getElementById('infoModal').classList.remove('active');
-        }
-
-        // Performance optimizations
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                Quagga.pause();
+      function decodeImageFile(file) {
+        if (!file || typeof Quagga === 'undefined') return;
+        clearStatus();
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          Quagga.decodeSingle({
+            decoder: { readers: READERS },
+            locate: true,
+            src: ev.target.result
+          }, (result) => {
+            if (result && result.codeResult && result.codeResult.code) {
+              showCode(result.codeResult.code);
             } else {
-                Quagga.start();
+              showStatus('No barcode detected in that image. Ensure bars are sharp and horizontal.', true);
             }
-        });
+          });
+        };
+        reader.readAsDataURL(file);
+      }
 
-        // Close modals when clicking outside
-        window.addEventListener('click', function(e) {
-            if (e.target.classList.contains('modal')) {
-                e.target.classList.remove('active');
-                if (e.target.id === 'resultModal') {
-                    Quagga.resume();
-                }
-            }
-        });
-    </script>
+      startBtn.addEventListener('click', startCamera);
+      stopBtn.addEventListener('click', stopCamera);
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files?.[0]) {
+          decodeImageFile(e.target.files[0]);
+          fileInput.value = '';
+        }
+      });
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('drag-over');
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        const file = e.dataTransfer?.files?.[0];
+        if (file) decodeImageFile(file);
+      });
+
+      document.addEventListener('paste', (e) => {
+        const items = e.clipboardData?.items;
+        if (!items) return;
+        for (const item of items) {
+          if (item.type.startsWith('image/')) {
+            const file = item.getAsFile();
+            if (file) decodeImageFile(file);
+            break;
+          }
+        }
+      });
+
+      copyBtn.addEventListener('click', () => {
+        window.QRVision.copyText(lastCode || barcodeResult.textContent, copyBtn, 'Copy');
+      });
+
+      resultModal.addEventListener('close', () => {
+        lastCode = '';
+        if (cameraActive && typeof Quagga !== 'undefined') {
+          Quagga.start();
+        }
+      });
+
+      clearHistoryBtn.addEventListener('click', () => {
+        window.QRVision.clearHistory();
+        refreshHistory();
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && cameraActive) {
+          stopCamera();
+        }
+      });
+
+      refreshHistory();
+    });
+  </script>
 </body>
 </html>
