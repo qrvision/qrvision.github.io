@@ -1,20 +1,102 @@
 /**
- * QR Vision Shared Utilities
+ * QR Vision Shared Core Utilities
+ * - Deferred GA4 loading (zero impact on FCP/LCP/TBT for Lighthouse 100)
+ * - Dynamic SRI-verified library loader (load heavy scanner libs only on demand)
+ * - Anti-phishing ("quishing") URL safety inspection
  * - Smart payload parsing (URL, Wi-Fi, Email, Phone, SMS, vCard, Geo)
- * - Local scan history (localStorage, max 30 entries)
- * - Native <dialog> result modal presentation
+ * - Local scan history + CSV export
  * - Service Worker registration
  */
-(function (window) {
+(function (window, document) {
   'use strict';
 
   const HISTORY_KEY = 'qrvision_history';
   const MAX_HISTORY = 30;
+  const SHORTENERS = new Set([
+    'bit.ly', 'tinyurl.com', 't.co', 'goo.gl', 'ow.ly', 'is.gd', 'buff.ly', 'rb.gy', 'cutt.ly', 'shorturl.at'
+  ]);
+  const loadedScripts = new Map();
+
+  function loadExternalScript(src, integrity) {
+    if (loadedScripts.has(src)) return loadedScripts.get(src);
+    const promise = new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[src="${src}"]`);
+      if (existing) {
+        resolve();
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = src;
+      if (integrity) {
+        script.integrity = integrity;
+        script.crossOrigin = 'anonymous';
+        script.referrerPolicy = 'no-referrer';
+      }
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Failed to load ' + src));
+      document.head.appendChild(script);
+    });
+    loadedScripts.set(src, promise);
+    return promise;
+  }
+
+  function initAnalyticsIdle() {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    let booted = false;
+    const boot = () => {
+      if (booted) return;
+      booted = true;
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-NMWK7FXYVR');
+      loadExternalScript('https://www.googletagmanager.com/gtag/js?id=G-NMWK7FXYVR').catch(() => {});
+    };
+    ['pointerdown', 'keydown', 'scroll'].forEach((evt) => {
+      window.addEventListener(evt, boot, { once: true, passive: true });
+    });
+    window.addEventListener('load', () => setTimeout(boot, 4000), { once: true });
+  }
+
+  function inspectUrlSafety(rawUrl) {
+    try {
+      const u = new URL(rawUrl);
+      const host = u.hostname.toLowerCase();
+      const warnings = [];
+      if (u.protocol === 'http:') {
+        warnings.push('Unencrypted HTTP link');
+      }
+      if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host) || host.startsWith('[')) {
+        warnings.push('Raw IP address destination');
+      }
+      if (host.includes('xn--')) {
+        warnings.push('Internationalized (Punycode) domain — verify spelling carefully');
+      }
+      if (SHORTENERS.has(host)) {
+        warnings.push('Shortened URL hides final destination');
+      }
+      return {
+        host: u.hostname,
+        isWarning: warnings.length > 0,
+        message: warnings.length
+          ? 'Caution (' + u.hostname + '): ' + warnings.join(' • ')
+          : 'Destination host: ' + u.hostname + ' (HTTPS)'
+      };
+    } catch {
+      return null;
+    }
+  }
 
   function detectPayload(rawText) {
     const text = (rawText || '').trim();
     if (/^https?:\/\//i.test(text)) {
-      return { type: 'URL', label: 'Open Link', href: text, isExternal: true };
+      return {
+        type: 'URL',
+        label: 'Open Link',
+        href: text,
+        isExternal: true,
+        safety: inspectUrlSafety(text)
+      };
     }
     if (/^WIFI:/i.test(text)) {
       const ssidMatch = text.match(/S:([^;]*)/i);
@@ -85,6 +167,20 @@
     }
   }
 
+  function exportHistoryCsv() {
+    const items = getHistory();
+    if (!items.length) return;
+    const esc = (v) => '"' + String(v || '').replace(/"/g, '""') + '"';
+    const rows = ['Type,Content,Timestamp', ...items.map((i) => `${esc(i.type)},${esc(i.text)},${esc(i.timestamp)}`)];
+    const blob = new Blob([rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'qrvision-scan-history.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   function renderHistory(listEl, sectionEl, onSelect) {
     if (!listEl || !sectionEl) return;
     const items = getHistory();
@@ -119,9 +215,20 @@
     });
   }
 
-  function openResultDialog(dialogEl, textEl, actionSlot, text, copyBtnLabel) {
+  function openResultDialog(dialogEl, textEl, actionSlot, text) {
     if (!dialogEl || !textEl) return;
     const parsed = detectPayload(text);
+    const safetyEl = dialogEl.querySelector('.safety-banner');
+    if (safetyEl) {
+      if (parsed.safety) {
+        safetyEl.hidden = false;
+        safetyEl.textContent = parsed.safety.message;
+        safetyEl.classList.toggle('warn', parsed.safety.isWarning);
+      } else {
+        safetyEl.hidden = true;
+      }
+    }
+
     if (parsed.type === 'Wi-Fi' && parsed.ssid) {
       textEl.textContent =
         'Network (SSID): ' + parsed.ssid +
@@ -193,6 +300,25 @@
     }
   }
 
+  function playBeep() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(880, ctx.currentTime);
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.1);
+    } catch {
+      // Ignore audio blocks
+    }
+  }
+
   function registerSW() {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -202,15 +328,19 @@
   }
 
   window.QRVision = {
+    loadExternalScript,
+    inspectUrlSafety,
     detectPayload,
     getHistory,
     saveToHistory,
     clearHistory,
+    exportHistoryCsv,
     renderHistory,
     openResultDialog,
     copyText,
-    registerSW
+    playBeep
   };
 
+  initAnalyticsIdle();
   registerSW();
-})(window);
+})(window, document);

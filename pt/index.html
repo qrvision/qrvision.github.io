@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMWK7FXYVR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NMWK7FXYVR');
-  </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>Ler QR Code Online Grátis - Leitor pela Câmera ou Imagem | QR Vision</title>
-  <meta name="description" content="Leitor de QR Code online rápido e gratuito. Escaneie códigos QR pela câmera, enviando imagem ou colando print (Ctrl+V), sem instalar aplicativo e com 100% de privacidade.">
+  <title>Ler QR Code Online Grátis - Câmera, Imagem e PDF | QR Vision</title>
+  <meta name="description" content="Leitor de QR Code online rápido e gratuito. Escaneie códigos QR pela câmera, imagens, PDFs ou colando print (Ctrl+V), sem instalar aplicativo e 100% privado.">
   <meta name="keywords" content="ler qr code online, leitor de qr code, escanear qr code, leitor qr code pela imagem, scanner qr code gratis">
   <link rel="canonical" href="https://qrvision.github.io/pt/">
 
@@ -29,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://qrvision.github.io/pt/">
   <meta property="og:title" content="Ler QR Code Online Grátis | QR Vision">
-  <meta property="og:description" content="Escaneie QR Codes pela câmera ou imagem direto no navegador. Grátis, rápido e 100% privado.">
+  <meta property="og:description" content="Escaneie QR Codes pela câmera, imagem ou PDF direto no navegador. Grátis, rápido e 100% privado.">
   <meta property="og:image" content="https://qrvision.github.io/image/og-preview.png">
   <meta property="og:site_name" content="QR Vision">
   <meta name="twitter:card" content="summary_large_image">
@@ -47,6 +39,7 @@
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="stylesheet" href="/css/styles.css">
 
   <script type="application/ld+json">
@@ -58,7 +51,7 @@
     "inLanguage": "pt-BR",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
-    "description": "Leitor de QR Code online gratuito que lê códigos pela câmera ou imagem enviada direto no navegador.",
+    "description": "Leitor de QR Code online gratuito que lê códigos pela câmera, imagem ou PDF direto no navegador.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
   }
   </script>
@@ -67,30 +60,9 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Preciso instalar algum aplicativo para ler QR code?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Não. Nosso leitor funciona diretamente no navegador do seu celular ou computador, sem precisar baixar aplicativo."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Posso ler um QR code de uma foto ou print?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. Clique em Enviar Imagem, arraste o arquivo para a área indicada ou cole o print diretamente com Ctrl+V."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "O leitor armazena meus códigos escaneados?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Não. Todo o processamento ocorre localmente no seu navegador e nenhuma imagem ou dado é enviado para servidores externos."
-        }
-      }
+      { "@type": "Question", "name": "Preciso instalar algum aplicativo para ler QR code?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Nosso leitor funciona diretamente no navegador do seu celular ou computador, sem precisar baixar aplicativo." } },
+      { "@type": "Question", "name": "Posso ler um QR code de uma foto, print ou PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Clique em Enviar Imagem / PDF, arraste os arquivos ou cole o print diretamente com Ctrl+V." } },
+      { "@type": "Question", "name": "O leitor armazena meus códigos escaneados?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Todo o processamento ocorre localmente no seu navegador e nenhuma imagem é enviada a servidores." } }
     ]
   }
   </script>
@@ -99,7 +71,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/pt/" class="brand">
-        <img src="/image/favicon-32x32.png" alt="Logo QR Vision" class="brand-icon" width="28" height="28">
+        <svg class="brand-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#0f172a"/><rect x="5" y="5" width="7" height="7" rx="1" stroke="#10b981" stroke-width="2"/><rect x="16" y="5" width="7" height="7" rx="1" stroke="#fff" stroke-width="2"/><rect x="5" y="16" width="7" height="7" rx="1" stroke="#fff" stroke-width="2"/><rect x="16" y="16" width="3" height="3" fill="#10b981"/><rect x="20" y="20" width="3" height="3" fill="#fff"/></svg>
         <span>QR Vision</span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
@@ -108,8 +80,8 @@
         <a href="/generator.html" class="nav-link">Gerador QR</a>
       </nav>
       <div class="header-actions">
-        <button type="button" class="icon-btn" popovertarget="lang-popover" aria-label="Selecionar idioma">🌐 PT ▾</button>
-        <button type="button" class="icon-btn" popovertarget="info-popover" aria-label="Informações">ℹ️ Info</button>
+        <button type="button" class="icon-btn" popovertarget="lang-popover" title="Selecionar idioma">🌐 PT ▾</button>
+        <button type="button" class="icon-btn" popovertarget="info-popover" title="Informações">ℹ️ Info</button>
       </div>
     </div>
   </header>
@@ -127,33 +99,42 @@
 
   <div id="info-popover" popover>
     <strong>QR Vision</strong>
-    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">
-      Leitor de QR Code rápido e privado diretamente no seu navegador.
-    </p>
-    <p style="font-size: 0.88rem; margin-bottom: 0.5rem;">
-      Contato: <a href="mailto:hashtagfor@outlook.com">hashtagfor@outlook.com</a>
-    </p>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">Leitor de QR Code rápido e privado diretamente no seu navegador.</p>
+    <p style="font-size: 0.88rem; margin-bottom: 0.5rem;">Contato: <a href="mailto:hashtagfor@outlook.com">hashtagfor@outlook.com</a></p>
     <p style="font-size: 0.88rem;"><a href="/about.html">Sobre</a> · <a href="/privacy.html">Privacidade</a></p>
   </div>
 
   <main>
     <section class="tool-card" aria-label="Leitor de QR Code Online">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span>100% Privado • Sem Uploads • Funciona Offline</span>
+      </div>
       <h1>Ler QR Code Online Grátis</h1>
       <p class="lead-text">
-        Escaneie códigos QR instantaneamente usando sua câmera, enviando uma imagem ou colando um print (<code>Ctrl+V</code>).
-        100% privado e sem instalar aplicativo.
+        Escaneie códigos QR pela câmera, enviando imagens ou PDFs, ou colando um print (<kbd>Ctrl</kbd>+<kbd>V</kbd>) — com verificação de segurança de links.
       </p>
 
       <div class="scanner-actions">
         <button id="start-button" type="button" class="btn btn-primary">📷 Iniciar Câmera</button>
         <label for="file-input" class="btn btn-secondary" tabindex="0" role="button">
-          🖼️ Enviar Imagem
-          <input type="file" id="file-input" accept="image/*" hidden>
+          🖼️ Enviar Imagem / PDF
+          <input type="file" id="file-input" accept="image/*,.pdf,application/pdf" multiple hidden>
         </label>
       </div>
 
       <div id="drop-zone" class="drop-zone">
-        Arraste e solte uma imagem aqui ou pressione <strong>Ctrl+V</strong> para colar uma captura de tela.
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <span>Arraste até 20 imagens ou PDFs aqui, ou pressione <kbd>Ctrl</kbd> + <kbd>V</kbd> para colar uma captura.</span>
+      </div>
+
+      <div class="scanner-options">
+        <label class="toggle-label"><input type="checkbox" id="continuous-toggle"><span>Leitura contínua</span></label>
+        <label class="toggle-label"><input type="checkbox" id="beep-toggle" checked><span>Aviso sonoro</span></label>
       </div>
 
       <div id="status-banner" class="status-banner" role="status" aria-live="polite"></div>
@@ -161,15 +142,20 @@
       <div id="reader-container" role="region" aria-label="Câmera do leitor">
         <div id="reader"></div>
         <div class="camera-controls">
+          <select id="camera-select" class="camera-select" aria-label="Selecionar câmera" hidden></select>
+          <label id="zoom-wrap" class="zoom-control" hidden><span>Zoom</span><input id="zoom-slider" type="range" min="1" max="4" step="0.1" value="1"></label>
           <button id="torch-button" type="button" class="btn btn-secondary btn-sm" hidden>🔦 Lanterna</button>
-          <button id="stop-button" type="button" class="btn btn-danger btn-sm">Parar Leitura</button>
+          <button id="stop-button" type="button" class="btn btn-danger btn-sm">Parar</button>
         </div>
       </div>
 
       <div id="history-section" class="history-section" hidden>
         <div class="history-header">
           <h2>Leituras Recentes (Salvo Localmente)</h2>
-          <button id="clear-history-btn" type="button" class="btn btn-secondary btn-sm">Limpar</button>
+          <div class="history-actions">
+            <button id="export-csv-btn" type="button" class="btn btn-secondary btn-sm">Exportar CSV</button>
+            <button id="clear-history-btn" type="button" class="btn btn-secondary btn-sm">Limpar</button>
+          </div>
         </div>
         <ul id="history-list" class="history-list"></ul>
       </div>
@@ -178,9 +164,9 @@
     <section class="content-section">
       <h2>Como Usar o Leitor de QR Code Online</h2>
       <ol>
-        <li><strong>Inicie a Câmera ou Envie uma Imagem:</strong> Clique em <em>Iniciar Câmera</em> ou escolha/cole uma imagem com o código QR.</li>
+        <li><strong>Inicie a Câmera ou Envie Arquivos:</strong> Clique em <em>Iniciar Câmera</em> ou selecione imagens/PDFs ou cole com <kbd>Ctrl</kbd>+<kbd>V</kbd>.</li>
         <li><strong>Aponte para o QR Code:</strong> Mantenha o código centralizado e bem iluminado.</li>
-        <li><strong>Acesse o Conteúdo:</strong> Abra links diretamente, copie senhas de Wi-Fi ou salve contatos com um clique.</li>
+        <li><strong>Acesse com Segurança:</strong> Verifique o domínio detectado, abra links, copie senhas de Wi-Fi ou exporte seu histórico em CSV.</li>
       </ol>
     </section>
 
@@ -192,8 +178,8 @@
           <p>Não. Nosso leitor funciona diretamente no navegador de celulares, tablets e computadores, sem necessidade de download.</p>
         </details>
         <details class="faq-item">
-          <summary>Posso ler um QR code de uma foto ou print?</summary>
-          <p>Sim. Clique em <strong>Enviar Imagem</strong>, arraste a foto para a caixa acima ou pressione <code>Ctrl+V</code> para colar um print.</p>
+          <summary>Posso ler um QR code de uma foto, print ou PDF?</summary>
+          <p>Sim. Clique em <strong>Enviar Imagem / PDF</strong>, arraste arquivos para a área acima ou pressione <kbd>Ctrl</kbd>+<kbd>V</kbd> para colar um print.</p>
         </details>
         <details class="faq-item">
           <summary>O leitor armazena as informações escaneadas?</summary>
@@ -204,14 +190,13 @@
   </main>
 
   <dialog id="result-modal" aria-labelledby="result-dialog-title">
-    <h3 id="result-dialog-title">Resultado Escaneado</h3>
+    <h2 id="result-dialog-title">Resultado Escaneado</h2>
+    <div class="safety-banner" hidden></div>
     <div class="result-box" id="result-text"></div>
     <div class="dialog-actions">
       <span id="smart-action-slot"></span>
       <button type="button" id="copy-result-btn" class="btn btn-primary">Copiar</button>
-      <form method="dialog">
-        <button type="submit" class="btn btn-secondary">Fechar</button>
-      </form>
+      <form method="dialog"><button type="submit" class="btn btn-secondary">Fechar</button></form>
     </div>
   </dialog>
 
@@ -230,14 +215,14 @@
 
   <script>
     window.QR_I18N = {
-      loadingLib: 'A biblioteca ainda está carregando. Tente novamente em instantes.',
-      noCamera: 'Nenhuma câmera detectada neste dispositivo. Tente enviar uma imagem.',
+      loadingLib: 'Carregando leitor...',
+      noCamera: 'Nenhuma câmera detectada. Tente enviar uma imagem.',
       cameraFailed: 'Erro ao acessar a câmera: ',
-      noQrFound: 'Nenhum QR Code encontrado nesta imagem.',
+      noQrFound: 'Nenhum QR Code encontrado neste arquivo.',
+      batchDone: 'Leitura em lote concluída: ',
       copyLabel: 'Copiar'
     };
   </script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="/js/app.js"></script>
   <script defer src="/js/qr-scanner.js"></script>
 </body>

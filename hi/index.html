@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMWK7FXYVR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NMWK7FXYVR');
-  </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>फ्री ऑनलाइन QR कोड स्कैनर - कैमरा या फोटो से स्कैन करें | QR Vision</title>
-  <meta name="description" content="बिना किसी ऐप के ब्राउज़र में तुरंत QR कोड स्कैन करें। मोबाइल कैमरा, इमेज अपलोड या स्क्रीनशॉट पेस्ट (Ctrl+V) से 100% सुरक्षित और फ्री स्कैनर।">
+  <title>फ्री ऑनलाइन QR कोड स्कैनर - कैमरा, फोटो और PDF | QR Vision</title>
+  <meta name="description" content="बिना किसी ऐप के ब्राउज़र में तुरंत QR कोड स्कैन करें। मोबाइल कैमरा, इमेज, PDF अपलोड या स्क्रीनशॉट पेस्ट (Ctrl+V) से 100% सुरक्षित और फ्री स्कैनर।">
   <meta name="keywords" content="qr code scanner online free, qr code kaise scan kare, photo se qr scan, ऑनलाइन qr स्कैनर">
   <link rel="canonical" href="https://qrvision.github.io/hi/">
 
@@ -29,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://qrvision.github.io/hi/">
   <meta property="og:title" content="फ्री ऑनलाइन QR कोड स्कैनर | QR Vision">
-  <meta property="og:description" content="कैमरा या फोटो से सीधे ब्राउज़र में QR कोड स्कैन करें — पूरी तरह फ्री और सुरक्षित।">
+  <meta property="og:description" content="कैमरा, फोटो या PDF से सीधे ब्राउज़र में QR कोड स्कैन करें — पूरी तरह फ्री और सुरक्षित।">
   <meta property="og:image" content="https://qrvision.github.io/image/og-preview.png">
   <meta property="og:site_name" content="QR Vision">
   <meta name="twitter:card" content="summary_large_image">
@@ -47,6 +39,7 @@
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="stylesheet" href="/css/styles.css">
 
   <script type="application/ld+json">
@@ -58,7 +51,7 @@
     "inLanguage": "hi",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
-    "description": "कैमरा या इमेज अपलोड से तुरंत QR कोड पढ़ने वाला फ्री ऑनलाइन वेब टूल।",
+    "description": "कैमरा, इमेज या PDF अपलोड से तुरंत QR कोड पढ़ने वाला फ्री ऑनलाइन वेब टूल।",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
   }
   </script>
@@ -67,22 +60,8 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "बिना ऐप डाउनलोड किए QR कोड कैसे स्कैन करें?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ब्राउज़र में QR Vision खोलें, कैमरा शुरू करें बटन दबाएं और QR कोड के सामने कैमरा रखें। तुरंत लिंक या टेक्स्ट दिख जाएगा।"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "क्या मैं गैलरी की फोटो या स्क्रीनशॉट से QR स्कैन कर सकता हूँ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "हाँ, इमेज अपलोड करें बटन से फोटो चुनें या Ctrl+V दबाकर स्क्रीनशॉट पेस्ट करें।"
-        }
-      }
+      { "@type": "Question", "name": "बिना ऐप डाउनलोड किए QR कोड कैसे स्कैन करें?", "acceptedAnswer": { "@type": "Answer", "text": "ब्राउज़र में QR Vision खोलें, कैमरा शुरू करें बटन दबाएं और QR कोड के सामने कैमरा रखें।" } },
+      { "@type": "Question", "name": "क्या मैं गैलरी की फोटो, PDF या स्क्रीनशॉट से QR स्कैन कर सकता हूँ?", "acceptedAnswer": { "@type": "Answer", "text": "हाँ, फोटो / PDF अपलोड करें बटन से फ़ाइल चुनें या Ctrl+V दबाकर स्क्रीनशॉट पेस्ट करें।" } }
     ]
   }
   </script>
@@ -91,7 +70,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/hi/" class="brand">
-        <img src="/image/favicon-32x32.png" alt="QR Vision लोगो" class="brand-icon" width="28" height="28">
+        <svg class="brand-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#0f172a"/><rect x="5" y="5" width="7" height="7" rx="1" stroke="#10b981" stroke-width="2"/><rect x="16" y="5" width="7" height="7" rx="1" stroke="#fff" stroke-width="2"/><rect x="5" y="16" width="7" height="7" rx="1" stroke="#fff" stroke-width="2"/><rect x="16" y="16" width="3" height="3" fill="#10b981"/><rect x="20" y="20" width="3" height="3" fill="#fff"/></svg>
         <span>QR Vision</span>
       </a>
       <nav class="main-nav" aria-label="मुख्य नेविगेशन">
@@ -100,8 +79,8 @@
         <a href="/generator.html" class="nav-link">QR जनरेटर</a>
       </nav>
       <div class="header-actions">
-        <button type="button" class="icon-btn" popovertarget="lang-popover" aria-label="भाषा चुनें">🌐 HI ▾</button>
-        <button type="button" class="icon-btn" popovertarget="info-popover" aria-label="जानकारी">ℹ️ Info</button>
+        <button type="button" class="icon-btn" popovertarget="lang-popover" title="भाषा चुनें">🌐 HI ▾</button>
+        <button type="button" class="icon-btn" popovertarget="info-popover" title="जानकारी">ℹ️ Info</button>
       </div>
     </div>
   </header>
@@ -119,30 +98,41 @@
 
   <div id="info-popover" popover>
     <strong>QR Vision</strong>
-    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">
-      सीधे ब्राउज़र में काम करने वाला 100% सुरक्षित QR कोड स्कैनर।
-    </p>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">सीधे ब्राउज़र में काम करने वाला 100% सुरक्षित QR कोड स्कैनर।</p>
     <p style="font-size: 0.88rem;"><a href="/about.html">हमारे बारे में</a> · <a href="/privacy.html">गोपनीयता नीति</a></p>
   </div>
 
   <main>
     <section class="tool-card" aria-label="ऑनलाइन QR कोड स्कैनर">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span>100% प्राइवेट • बिना ऐप • ऑफलाइन सपोर्ट</span>
+      </div>
       <h1>फ्री ऑनलाइन QR कोड स्कैनर</h1>
       <p class="lead-text">
-        मोबाइल कैमरा, इमेज अपलोड या स्क्रीनशॉट पेस्ट (<code>Ctrl+V</code>) करके तुरंत QR कोड स्कैन करें।
-        कोई ऐप डाउनलोड नहीं, 100% प्राइवेट।
+        कैमरा, इमेज, PDF अपलोड या स्क्रीनशॉट पेस्ट (<kbd>Ctrl</kbd>+<kbd>V</kbd>) करके तुरंत QR कोड स्कैन करें।
       </p>
 
       <div class="scanner-actions">
         <button id="start-button" type="button" class="btn btn-primary">📷 कैमरा शुरू करें</button>
         <label for="file-input" class="btn btn-secondary" tabindex="0" role="button">
-          🖼️ फोटो अपलोड करें
-          <input type="file" id="file-input" accept="image/*" hidden>
+          🖼️ फोटो / PDF अपलोड करें
+          <input type="file" id="file-input" accept="image/*,.pdf,application/pdf" multiple hidden>
         </label>
       </div>
 
       <div id="drop-zone" class="drop-zone">
-        यहाँ इमेज ड्रैग और ड्रॉप करें या स्क्रीनशॉट पेस्ट करने के लिए <strong>Ctrl+V</strong> दबाएँ।
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <span>यहाँ इमेज या PDF ड्रैग करें, या स्क्रीनशॉट पेस्ट करने के लिए <kbd>Ctrl</kbd> + <kbd>V</kbd> दबाएँ।</span>
+      </div>
+
+      <div class="scanner-options">
+        <label class="toggle-label"><input type="checkbox" id="continuous-toggle"><span>लगातार स्कैन</span></label>
+        <label class="toggle-label"><input type="checkbox" id="beep-toggle" checked><span>साउंड अलर्ट</span></label>
       </div>
 
       <div id="status-banner" class="status-banner" role="status" aria-live="polite"></div>
@@ -150,15 +140,20 @@
       <div id="reader-container" role="region" aria-label="कैमरा व्यू">
         <div id="reader"></div>
         <div class="camera-controls">
+          <select id="camera-select" class="camera-select" aria-label="कैमरा चुनें" hidden></select>
+          <label id="zoom-wrap" class="zoom-control" hidden><span>Zoom</span><input id="zoom-slider" type="range" min="1" max="4" step="0.1" value="1"></label>
           <button id="torch-button" type="button" class="btn btn-secondary btn-sm" hidden>🔦 फ्लैशलाइट</button>
-          <button id="stop-button" type="button" class="btn btn-danger btn-sm">स्कैन रोकें</button>
+          <button id="stop-button" type="button" class="btn btn-danger btn-sm">रोकें</button>
         </div>
       </div>
 
       <div id="history-section" class="history-section" hidden>
         <div class="history-header">
           <h2>हाल के स्कैन (आपके ब्राउज़र में सुरक्षित)</h2>
-          <button id="clear-history-btn" type="button" class="btn btn-secondary btn-sm">साफ़ करें</button>
+          <div class="history-actions">
+            <button id="export-csv-btn" type="button" class="btn btn-secondary btn-sm">CSV डाउनलोड</button>
+            <button id="clear-history-btn" type="button" class="btn btn-secondary btn-sm">साफ़ करें</button>
+          </div>
         </div>
         <ul id="history-list" class="history-list"></ul>
       </div>
@@ -167,9 +162,9 @@
     <section class="content-section">
       <h2>ऑनलाइन QR कोड कैसे स्कैन करें?</h2>
       <ol>
-        <li><strong>कैमरा या फोटो चुनें:</strong> <em>कैमरा शुरू करें</em> पर क्लिक करें या गैलरी से QR कोड की फोटो अपलोड करें।</li>
+        <li><strong>कैमरा या फ़ाइल चुनें:</strong> <em>कैमरा शुरू करें</em> दबाएँ या फोटो/PDF अपलोड करें।</li>
         <li><strong>QR कोड को फ्रेम में रखें:</strong> अच्छी रोशनी में कोड को कैमरे के सामने रखें।</li>
-        <li><strong>परिणाम देखें:</strong> तुरंत लिंक खोलें, Wi-Fi पासवर्ड कॉपी करें या टेक्स्ट सेव करें।</li>
+        <li><strong>सुरक्षित परिणाम देखें:</strong> लिंक सुरक्षा जांच के बाद वेबसाइट खोलें या Wi-Fi पासवर्ड कॉपी करें।</li>
       </ol>
     </section>
 
@@ -181,22 +176,21 @@
           <p>ब्राउज़र में QR Vision खोलें, <strong>कैमरा शुरू करें</strong> दबाएँ और QR कोड स्कैन करें।</p>
         </details>
         <details class="faq-item">
-          <summary>क्या मैं गैलरी की फोटो या स्क्रीनशॉट से QR स्कैन कर सकता हूँ?</summary>
-          <p>हाँ, <strong>फोटो अपलोड करें</strong> बटन चुनें या <code>Ctrl+V</code> से स्क्रीनशॉट पेस्ट करें।</p>
+          <summary>क्या मैं गैलरी की फोटो, PDF या स्क्रीनशॉट से QR स्कैन कर सकता हूँ?</summary>
+          <p>हाँ, <strong>फोटो / PDF अपलोड करें</strong> बटन चुनें या <kbd>Ctrl</kbd>+<kbd>V</kbd> से स्क्रीनशॉट पेस्ट करें।</p>
         </details>
       </div>
     </section>
   </main>
 
   <dialog id="result-modal" aria-labelledby="result-dialog-title">
-    <h3 id="result-dialog-title">स्कैन परिणाम</h3>
+    <h2 id="result-dialog-title">स्कैन परिणाम</h2>
+    <div class="safety-banner" hidden></div>
     <div class="result-box" id="result-text"></div>
     <div class="dialog-actions">
       <span id="smart-action-slot"></span>
       <button type="button" id="copy-result-btn" class="btn btn-primary">कॉपी करें</button>
-      <form method="dialog">
-        <button type="submit" class="btn btn-secondary">बंद करें</button>
-      </form>
+      <form method="dialog"><button type="submit" class="btn btn-secondary">बंद करें</button></form>
     </div>
   </dialog>
 
@@ -215,14 +209,14 @@
 
   <script>
     window.QR_I18N = {
-      loadingLib: 'स्कैनर लोड हो रहा है। कृपया एक क्षण बाद पुनः प्रयास करें।',
+      loadingLib: 'स्कैनर लोड हो रहा है...',
       noCamera: 'कोई कैमरा नहीं मिला। कृपया इमेज अपलोड करें।',
       cameraFailed: 'कैमरा एक्सेस विफल: ',
-      noQrFound: 'इस इमेज में कोई QR कोड नहीं मिला।',
+      noQrFound: 'इस फ़ाइल में कोई QR कोड नहीं मिला।',
+      batchDone: 'बैच स्कैन पूर्ण: ',
       copyLabel: 'कॉपी करें'
     };
   </script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="/js/app.js"></script>
   <script defer src="/js/qr-scanner.js"></script>
 </body>

@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMWK7FXYVR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NMWK7FXYVR');
-  </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <title>Free Online Barcode Scanner - Read EAN, UPC, Code 128 | QR Vision</title>
-  <meta name="description" content="Scan product barcodes online using your camera or uploaded images. Supports EAN-13, EAN-8, UPC-A, Code 128, and Code 39 barcodes with 100% browser privacy.">
+  <meta name="description" content="Scan product barcodes online using your camera, uploaded images, or clipboard paste. Supports EAN-13, EAN-8, UPC-A, Code 128, and Code 39 with 100% browser privacy.">
   <meta name="keywords" content="online barcode scanner, barcode reader online, scan barcode from image, EAN-13 scanner, UPC barcode reader, Code 128 scanner">
   <link rel="canonical" href="https://qrvision.github.io/barcode.html">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://qrvision.github.io/barcode.html">
   <meta property="og:title" content="Free Online Barcode Scanner | QR Vision">
@@ -32,7 +22,6 @@
   <meta name="twitter:description" content="Scan product barcodes from webcam or image upload — 100% free and private.">
   <meta name="twitter:image" content="https://qrvision.github.io/image/og-preview.png">
 
-  <!-- Verification & PWA -->
   <meta name="google-site-verification" content="J4i7U8BoUdSe9vM605fuLa4323DhqnTh3aqJXRbPNLE">
   <meta name="msvalidate.01" content="6B207FDEE38E8B1F2AC60875FBCDE2F5">
   <meta name="theme-color" content="#0f172a">
@@ -43,9 +32,9 @@
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,17 +44,7 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "description": "Free browser-based 1D barcode scanner supporting EAN-13, EAN-8, UPC-A, Code 128, and Code 39 via live camera or image upload.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "EAN-13, EAN-8, UPC-A retail barcode decoding",
-      "Code 128 and Code 39 logistics barcode decoding",
-      "Live webcam scanning and image file upload",
-      "Local scan history with zero server uploads"
-    ]
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
   <script type="application/ld+json">
@@ -73,18 +52,8 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://qrvision.github.io/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Barcode Scanner",
-        "item": "https://qrvision.github.io/barcode.html"
-      }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrvision.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Barcode Scanner", "item": "https://qrvision.github.io/barcode.html" }
     ]
   }
   </script>
@@ -96,26 +65,17 @@
       {
         "@type": "Question",
         "name": "Which barcode formats can QR Vision decode?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "QR Vision's Barcode Scanner supports EAN-13, EAN-8, UPC-A, Code 128, and Code 39 barcodes from both live camera feeds and uploaded images."
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": "QR Vision's Barcode Scanner supports EAN-13, EAN-8, UPC-A, Code 128, and Code 39 barcodes from both live camera feeds and uploaded images." }
       },
       {
         "@type": "Question",
         "name": "Can I scan a barcode from an image or photo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Click Upload Barcode Image, drag and drop an image file, or paste a screenshot with Ctrl+V to decode the barcode value locally in your browser."
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click Upload Barcode Image, drag and drop an image file, or paste a screenshot with Ctrl+V to decode the barcode value locally in your browser." }
       },
       {
         "@type": "Question",
         "name": "Are my scanned barcodes uploaded to any server?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. All decoding is executed locally inside your browser using client-side JavaScript. No image or barcode number ever leaves your device."
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": "No. All decoding runs locally inside your browser using client-side JavaScript. No image or barcode number ever leaves your device." }
       }
     ]
   }
@@ -125,7 +85,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="brand">
-        <img src="/image/favicon-32x32.png" alt="QR Vision logo" class="brand-icon" width="28" height="28">
+        <svg class="brand-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#0f172a"/><rect x="5" y="5" width="7" height="7" rx="1" stroke="#10b981" stroke-width="2"/><rect x="16" y="5" width="7" height="7" rx="1" stroke="#fff" stroke-width="2"/><rect x="5" y="16" width="7" height="7" rx="1" stroke="#fff" stroke-width="2"/><rect x="16" y="16" width="3" height="3" fill="#10b981"/><rect x="20" y="20" width="3" height="3" fill="#fff"/></svg>
         <span>QR Vision</span>
       </a>
 
@@ -136,8 +96,8 @@
       </nav>
 
       <div class="header-actions">
-        <button type="button" class="icon-btn" popovertarget="lang-popover" aria-label="Select language">🌐 EN ▾</button>
-        <button type="button" class="icon-btn" popovertarget="info-popover" aria-label="About and contact info">ℹ️ Info</button>
+        <button type="button" class="icon-btn" popovertarget="lang-popover" title="Select language">🌐 EN ▾</button>
+        <button type="button" class="icon-btn" popovertarget="info-popover" title="About and contact info">ℹ️ Info</button>
       </div>
     </div>
   </header>
@@ -161,16 +121,18 @@
     <p style="font-size: 0.88rem; margin-bottom: 0.5rem;">
       Contact: <a href="mailto:hashtagfor@outlook.com">hashtagfor@outlook.com</a>
     </p>
-    <p style="font-size: 0.88rem;">
-      <a href="/about.html">About</a> · <a href="/privacy.html">Privacy Policy</a>
-    </p>
+    <p style="font-size: 0.88rem;"><a href="/about.html">About</a> · <a href="/privacy.html">Privacy Policy</a></p>
   </div>
 
   <main>
     <section class="tool-card" aria-label="Barcode Scanner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span>EAN-13 • UPC-A • Code 128 • Code 39</span>
+      </div>
       <h1>Free Online Barcode Scanner</h1>
       <p class="lead-text">
-        Read EAN-13, EAN-8, UPC, Code 128, and Code 39 barcodes directly in your browser from a live camera or uploaded image.
+        Read retail and shipping barcodes directly in your browser from a live camera, uploaded image, or pasted screenshot.
       </p>
 
       <div class="scanner-actions">
@@ -183,7 +145,12 @@
       </div>
 
       <div id="drop-zone" class="drop-zone">
-        Drag &amp; drop a barcode photo here, or press <strong>Ctrl+V</strong> (Cmd+V) to paste a screenshot.
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <span>Drag &amp; drop a barcode photo here, or press <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste a screenshot.</span>
       </div>
 
       <div id="statusMessage" class="status-banner" role="status" aria-live="polite"></div>
@@ -193,7 +160,10 @@
       <div id="history-section" class="history-section" hidden>
         <div class="history-header">
           <h2>Recent Scans (Stored Locally)</h2>
-          <button id="clear-history-btn" type="button" class="btn btn-secondary btn-sm">Clear History</button>
+          <div class="history-actions">
+            <button id="export-csv-btn" type="button" class="btn btn-secondary btn-sm">Export CSV</button>
+            <button id="clear-history-btn" type="button" class="btn btn-secondary btn-sm">Clear</button>
+          </div>
         </div>
         <ul id="history-list" class="history-list"></ul>
       </div>
@@ -226,7 +196,7 @@
         </details>
         <details class="faq-item">
           <summary>Can I scan a barcode from an image or photo?</summary>
-          <p>Yes. Click <strong>Upload Barcode Image</strong>, drag and drop a photo, or paste a screenshot with <code>Ctrl+V</code> to decode the barcode instantly.</p>
+          <p>Yes. Click <strong>Upload Barcode Image</strong>, drag and drop a photo, or paste a screenshot with <kbd>Ctrl</kbd>+<kbd>V</kbd> to decode the barcode instantly.</p>
         </details>
         <details class="faq-item">
           <summary>Are my scanned barcodes uploaded to any server?</summary>
@@ -237,7 +207,8 @@
   </main>
 
   <dialog id="resultModal" aria-labelledby="barcode-dialog-title">
-    <h3 id="barcode-dialog-title">Barcode Scan Result</h3>
+    <h2 id="barcode-dialog-title">Barcode Scan Result</h2>
+    <div class="safety-banner" hidden></div>
     <div id="barcodeResult" class="result-box"></div>
     <div class="dialog-actions">
       <span id="smart-action-slot"></span>
@@ -261,10 +232,11 @@
     </div>
   </footer>
 
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js" integrity="sha512-bCsBoYoW6zE0aja5xcIyoCDPfT27+cGr7AOCqelttLVRGay6EKGQbR6wm6SUcUGOMGXJpj+jrIpMS6i80+kZPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="/js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const QUAGGA_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js';
+      const QUAGGA_SRI = 'sha512-bCsBoYoW6zE0aja5xcIyoCDPfT27+cGr7AOCqelttLVRGay6EKGQbR6wm6SUcUGOMGXJpj+jrIpMS6i80+kZPw==';
       const READERS = ['ean_reader', 'ean_8_reader', 'code_128_reader', 'code_39_reader', 'upc_reader'];
       let cameraActive = false;
       let lastCode = '';
@@ -282,6 +254,7 @@
       const historySection = document.getElementById('history-section');
       const historyList = document.getElementById('history-list');
       const clearHistoryBtn = document.getElementById('clear-history-btn');
+      const exportCsvBtn = document.getElementById('export-csv-btn');
 
       function showStatus(message, isError = false) {
         statusMessage.textContent = message;
@@ -293,6 +266,14 @@
         statusMessage.classList.remove('active', 'error');
       }
 
+      async function ensureQuagga() {
+        if (typeof Quagga === 'undefined') {
+          showStatus('Loading barcode engine...');
+          await window.QRVision.loadExternalScript(QUAGGA_SRC, QUAGGA_SRI);
+          clearStatus();
+        }
+      }
+
       function refreshHistory() {
         window.QRVision.renderHistory(historyList, historySection, (text) => {
           lastCode = text;
@@ -302,6 +283,7 @@
 
       function showCode(code) {
         lastCode = code;
+        window.QRVision.playBeep();
         window.QRVision.saveToHistory(code);
         refreshHistory();
         window.QRVision.openResultDialog(resultModal, barcodeResult, actionSlot, code);
@@ -309,38 +291,31 @@
 
       function stopCamera() {
         if (!cameraActive || typeof Quagga === 'undefined') return;
-        try {
-          Quagga.stop();
-        } catch {
-          // Ignore
-        }
+        try { Quagga.stop(); } catch {}
         cameraActive = false;
         viewport.classList.remove('active');
         startBtn.hidden = false;
         stopBtn.hidden = true;
       }
 
-      function startCamera() {
-        if (typeof Quagga === 'undefined') {
-          showStatus('Barcode library is still loading. Please try again.', true);
-          return;
-        }
+      async function startCamera() {
         if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
           showStatus('Camera access is not supported by your browser.', true);
           return;
         }
         clearStatus();
+        try {
+          await ensureQuagga();
+        } catch {
+          showStatus('Failed to load barcode engine.', true);
+          return;
+        }
         viewport.classList.add('active');
         startBtn.hidden = true;
         stopBtn.hidden = false;
 
         Quagga.init({
-          inputStream: {
-            name: 'Live',
-            type: 'LiveStream',
-            target: viewport,
-            constraints: { facingMode: 'environment' }
-          },
+          inputStream: { name: 'Live', type: 'LiveStream', target: viewport, constraints: { facingMode: 'environment' } },
           decoder: { readers: READERS }
         }, (err) => {
           if (err) {
@@ -364,9 +339,15 @@
         });
       }
 
-      function decodeImageFile(file) {
-        if (!file || typeof Quagga === 'undefined') return;
+      async function decodeImageFile(file) {
+        if (!file) return;
         clearStatus();
+        try {
+          await ensureQuagga();
+        } catch {
+          showStatus('Failed to load barcode engine.', true);
+          return;
+        }
         const reader = new FileReader();
         reader.onload = (ev) => {
           Quagga.decodeSingle({
@@ -386,28 +367,16 @@
 
       startBtn.addEventListener('click', startCamera);
       stopBtn.addEventListener('click', stopCamera);
-
       fileInput.addEventListener('change', (e) => {
-        if (e.target.files?.[0]) {
-          decodeImageFile(e.target.files[0]);
-          fileInput.value = '';
-        }
+        if (e.target.files?.[0]) { decodeImageFile(e.target.files[0]); fileInput.value = ''; }
       });
 
-      dropZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropZone.classList.add('drag-over');
-      });
-
-      dropZone.addEventListener('dragleave', () => {
-        dropZone.classList.remove('drag-over');
-      });
-
+      dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+      dropZone.addEventListener('dragleave', () => { dropZone.classList.remove('drag-over'); });
       dropZone.addEventListener('drop', (e) => {
         e.preventDefault();
         dropZone.classList.remove('drag-over');
-        const file = e.dataTransfer?.files?.[0];
-        if (file) decodeImageFile(file);
+        if (e.dataTransfer?.files?.[0]) decodeImageFile(e.dataTransfer.files[0]);
       });
 
       document.addEventListener('paste', (e) => {
@@ -428,21 +397,12 @@
 
       resultModal.addEventListener('close', () => {
         lastCode = '';
-        if (cameraActive && typeof Quagga !== 'undefined') {
-          Quagga.start();
-        }
+        if (cameraActive && typeof Quagga !== 'undefined') Quagga.start();
       });
 
-      clearHistoryBtn.addEventListener('click', () => {
-        window.QRVision.clearHistory();
-        refreshHistory();
-      });
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden && cameraActive) {
-          stopCamera();
-        }
-      });
+      clearHistoryBtn.addEventListener('click', () => { window.QRVision.clearHistory(); refreshHistory(); });
+      exportCsvBtn.addEventListener('click', () => { window.QRVision.exportHistoryCsv(); });
+      document.addEventListener('visibilitychange', () => { if (document.hidden && cameraActive) stopCamera(); });
 
       refreshHistory();
     });
